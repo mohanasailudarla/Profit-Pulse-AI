@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Pulse AI – Data-Driven Marketing Optimizer</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Particle.js for background animation -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <div class="app-container">
+        <!-- Smart Hero Section -->
+        <header class="hero-section glass-panel">
+            <div class="hero-content">
+                <div class="badge fade-in-up">System Online <span class="status-dot"></span></div>
+                <h1 class="fade-in-up delay-1"> Profit Pulse AI <span class="text-gradient">BUSINESS TRICKS </span>
+                </h1>
+                <p class="fade-in-up delay-2">PROFIT PULSE AI actively monitors, analyzes, and optimizes your ad spend
+                    across all platforms.</p>
+                <button class="btn-primary fade-in-up delay-3" id="launch-btn">
+                    <i data-lucide="rocket"></i> Launch Optimization
+                </button>
+            </div>
+            <div class="hero-stats grow-in delay-2">
+                <div class="stat-circle">
+                    <svg viewBox="0 0 36 36" class="circular-chart">
+                        <path class="circle-bg"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle" stroke-dasharray="85, 100"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <text x="18" y="20.35" class="percentage">85</text>
+                    </svg>
+                    <span class="stat-label">Campaign Health Score</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Grid -->
+        <main class="dashboard-grid">
+
+            <!-- Campaign Control Panel -->
+            <section class="control-panel glass-panel slide-in-left delay-4">
+                <div class="panel-header">
+                    <h2><i data-lucide="sliders"></i> Campaign Control</h2>
+                </div>
+                <div class="input-group">
+                    <label>Platform</label>
+                    <div class="platform-selector">
+                        <button class="platform-btn active" data-platform="google"><i data-lucide="chrome"></i>
+                            Google</button>
+                        <button class="platform-btn" data-platform="instagram"><i data-lucide="instagram"></i>
+                            Instagram</button>
+                        <button class="platform-btn" data-platform="youtube"><i data-lucide="youtube"></i>
+                            YouTube</button>
+                    </div>
+                </div>
+
+                <div class="input-group mt-4">
+                    <label>Target Audience</label>
+                    <select class="custom-select">
+                        <option>Broad Tech Audience (18-35)</option>
+                        <option>E-commerce Shoppers</option>
+                        <option>B2B Decision Makers</option>
+                        <option>Gamers & Streamers</option>
+                    </select>
+                </div>
+
+                <div class="input-group mt-4">
+                    <label>Daily Budget Setup: $<span id="budget-value">1500</span></label>
+                    <input type="range" id="budget-slider" min="100" max="10000" value="1500" class="neon-slider">
+                </div>
+
+                <button class="btn-glow mt-6" id="optimize-now-btn">
+                    <i data-lucide="zap"></i> Optimize Now
+                    <div class="btn-glow-effect"></div>
+                </button>
+            </section>
+
+            <!-- Live Analytics Visualization -->
+            <section class="analytics-panel glass-panel fade-in-up delay-4">
+                <div class="panel-header">
+                    <h2><i data-lucide="activity"></i> Live Analytics</h2>
+                    <div class="live-indicator">LIVE</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="mainChart"></canvas>
+                </div>
+                <div class="metrics-row mt-4">
+                    <div class="metric-card">
+                        <span class="metric-title">CTR</span>
+                        <span class="metric-value text-blue" id="ctr-value">4.2%</span>
+                        <span class="metric-trend positive"><i data-lucide="trending-up"></i> +1.5%</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-title">Conversions</span>
+                        <span class="metric-value text-purple" id="conv-value">342</span>
+                        <span class="metric-trend positive"><i data-lucide="trending-up"></i> +12.4%</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-title">ROI</span>
+                        <span class="metric-value text-cyan" id="roi-value">284%</span>
+                        <span class="metric-trend positive"><i data-lucide="trending-up"></i> +5.1%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Insights Section -->
+            <section class="insights-panel glass-panel slide-in-right delay-4">
+                <div class="panel-header">
+                    <h2><i data-lucide="brain-circuit"></i> AI Insights</h2>
+                    <span class="badge-small">3 Suggestions</span>
+                </div>
+                <div class="chat-container">
+                    <div class="ai-bubble suggestion flash">
+                        <div class="ai-icon"><i data-lucide="sparkles"></i></div>
+                        <div class="ai-text">
+                            <strong>Shift Allocation</strong>
+                            <p>Increase budget on Instagram for better ROI (+12% projected).</p>
+                            <button class="btn-text">Apply</button>
+                        </div>
+                    </div>
+                    <div class="ai-bubble alert flash delay-1">
+                        <div class="ai-icon"><i data-lucide="alert-triangle"></i></div>
+                        <div class="ai-text">
+                            <strong>Audience Saturation</strong>
+                            <p>Google Ads frequency is too high. Consider expanding targeting.</p>
+                            <button class="btn-text">Review</button>
+                        </div>
+                    </div>
+                    <div class="ai-bubble info flash delay-2">
+                        <div class="ai-icon"><i data-lucide="info"></i></div>
+                        <div class="ai-text">
+                            <strong>Creative Performance</strong>
+                            <p>Video ad "Spring Promo V2" is outperforming static images by 3x.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparison View -->
+            <section class="comparison-panel glass-panel fade-in-up delay-5">
+                <div class="panel-header">
+                    <h2><i data-lucide="bar-chart-2"></i> Optimization Impact</h2>
+                    <p class="subtitle">Last 30 Days Simulator</p>
+                </div>
+                <div class="comparison-cards">
+                    <div class="comp-card before">
+                        <div class="comp-header">Before Profit Pulse AI</div>
+                        <div class="comp-body">
+                            <div class="comp-row"><span>CPA</span> <strong>$45.20</strong></div>
+                            <div class="comp-row"><span>ROAS</span> <strong>1.8x</strong></div>
+                            <div class="comp-row"><span>Wasted Spend</span> <strong>$2,450</strong></div>
+                        </div>
+                    </div>
+                    <div class="comp-divider">
+                        <i data-lucide="arrow-right"></i>
+                    </div>
+                    <div class="comp-card after">
+                        <div class="comp-header">After Profit Pulse AI</div>
+                        <div class="comp-body">
+                            <div class="comp-row"><span>CPA</span> <strong class="text-green">$28.50</strong></div>
+                            <div class="comp-row"><span>ROAS</span> <strong class="text-green">3.4x</strong></div>
+                            <div class="comp-row"><span>Wasted Spend</span> <strong class="text-green">$310</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="app.js"></script>
+</body>
+
+</html>
