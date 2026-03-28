@@ -183,7 +183,7 @@ optimizeBtn.addEventListener('click', async () => {
             optimizeBtn.style.background = 'linear-gradient(90deg, #059669, #10b981)';
 
             // Update metrics to show improvement
-            document.getElementById('ctr-value').textContent = data.metrics.ctr_percent + '%';
+            //document.getElementById('ctr-value').textContent = data.metrics.ctr_percent + '%';
             document.getElementById('conv-value').textContent = data.metrics.conversions;
             document.getElementById('roi-value').textContent = data.metrics.roi_percent + '%';
 
