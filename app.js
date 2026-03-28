@@ -261,4 +261,8 @@ function simulateDataChange() {
     analyticsChart.data.datasets[0].data = newData1;
     analyticsChart.data.datasets[1].data = newData2;
     analyticsChart.update();
+}async function connectBackend() {
+  const res = await fetch('/api/campaign');
+  const data = await res.json();
+  console.log(data.message);
 }
