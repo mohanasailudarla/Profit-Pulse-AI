@@ -264,5 +264,6 @@ function simulateDataChange() {
 }async function connectBackend() {
   const res = await fetch('/api/campaign');
   const data = await res.json();
-  console.log(data.message);
+  document.getElementById("cr_value").innerText = data.cr_value;
+  console.log(data.cr_value);
 }
